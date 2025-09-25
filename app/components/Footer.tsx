@@ -47,8 +47,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 md:py-20 px-4 bg-gradient-to-b from-purple-900/20 to-blac relative min-h-screen">
-      <div className="max-w-3xl mx-auto text-center">
+    <footer className="py-12 md:py-20 px-4 bg-gradient-to-b from-purple-900/20 to-black min-h-screen flex flex-col justify-center relative">
+      <div className="w-full max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Let's Connect</h2>
         <p className="text-gray-300 mb-6">Let's Create something together.</p>
         <div className="max-w-xl mx-auto mb-8">
@@ -85,9 +85,9 @@ export default function Footer() {
           }
         </div>
       </div>
-      <div className="absolute bottom-28 left-1/2 -translate-x-1/2 flex gap-4 items-center text-xs text-white/70">
+      <div className="flex gap-4 items-center justify-center text-xs text-white/70 mt-16">
         <TopIcons />
-      </div>    
+      </div>
     </footer>
   );
 }

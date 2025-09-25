@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--ty, 0)) translateX(var(--tx, 0)) scale(var(--sc, 1));
+  transition: all var(--tduration, 700ms) ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0px) translateX(0px) scale(1);
+}

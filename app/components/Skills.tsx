@@ -7,7 +7,7 @@ export default function Skills() {
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center opacity-100 transform-none">
           Skills & Technologies
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <AnimateOnScroll>
             <div className="p-4 rounded-2xl bg-gradient-to-br from-purple-900/20 to-blue-900/20 border-2 border-white/10">
               <h2 className="mb-4 text-lg font-semibold">📱 Frontend</h2>

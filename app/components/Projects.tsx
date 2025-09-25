@@ -31,7 +31,7 @@ export default function Projects() {
               </div>
             </article>
           </AnimateOnScroll>
-          <AnimateOnScroll delay={300} translateY={6} translateX={-1} tduration={1200}>
+          <AnimateOnScroll translateY={6} translateX={-1} tduration={1200}>
             <article className="group relative aspect-video hover:cursor-pointer bg-gradient-to-br from-purple-900/50 to-blue-900/50 overflow-hidden rounded-xl opacity-100 transform-none">
               <Image
                 src="/images/inventomate.PNG"

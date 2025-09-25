@@ -47,42 +47,41 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 md:py-20 px-4 bg-gradient-to-b from-purple-900/20 to-black min-h-screen flex flex-col justify-center relative">
+    <footer className="py-12 px-4 bg-gradient-to-b from-purple-900/20 to-black flex flex-col justify-center relative">
       <div className="w-full max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Let's Connect</h2>
         <p className="text-gray-300 mb-6">Let's Create something together.</p>
         <div className="max-w-xl mx-auto mb-8">
           {
-            status === "Message sent!" ?
-              <EmailSent />
-            :
-            <form onSubmit={sendEmail} className="space-y-6">
-              <AnimateOnScroll delay={100}>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                <input required type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" />
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={200}>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                <input required type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" />
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={300}>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none"></textarea>
-              </AnimateOnScroll>
-              {!loading ?
-                <>
-                  <AnimateOnScroll delay={300}>
-                    <button type="submit" className="w-full px-6 py-3 text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity hover:cursor-pointer">Send Message</button>
-                  </AnimateOnScroll>
-                  {status === "Failed to send message: " + status.split("Failed to send message: ")[1] &&
-                    <p className="text-red-500 mt-2">{status}</p>
-                  }
-                </>
-                :
-                <p className="animate-pulse">Sending email...</p>
-              }
-            </form>
+            status === "Message sent!" &&
+            <EmailSent />
           }
+          <form onSubmit={sendEmail} className={`space-y-6 ${status === "Message sent!" ? "opacity-0" : ""}`}>
+            <AnimateOnScroll delay={100}>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
+              <input required type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" />
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={100}>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+              <input required type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" />
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={100}>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+              <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none"></textarea>
+            </AnimateOnScroll>
+            {!loading ?
+              <>
+                <AnimateOnScroll delay={100}>
+                  <button type="submit" className="w-full px-6 py-3 text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity hover:cursor-pointer">Send Message</button>
+                </AnimateOnScroll>
+                {status === "Failed to send message: " + status.split("Failed to send message: ")[1] &&
+                  <p className="text-red-500 mt-2">{status}</p>
+                }
+              </>
+              :
+              <p className="animate-pulse py-3">Sending email...</p>
+            }
+          </form>
         </div>
       </div>
       <div className="flex gap-4 items-center justify-center text-xs text-white/70 mt-16">

@@ -41,7 +41,7 @@ export default function Skills() {
               <div className="space-y-4">
                 <AnimateOnScroll delay={100} translateY={-2} translateX={-4}>
                   <div className="bg-white/5 rounded-xl p-4 text-center transition-colors">
-                    <h3 className="text-md font-semibold">Python (Django & Flask)</h3>
+                    <h3 className="text-md font-semibold">Node & Express</h3>
                   </div>
                 </AnimateOnScroll>
                 <AnimateOnScroll delay={200} translateY={-2} translateX={-4}>

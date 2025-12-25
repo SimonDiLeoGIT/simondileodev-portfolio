@@ -11,6 +11,29 @@ export default function Projects() {
           <AnimateOnScroll translateY={6} translateX={-1} tduration={1200}>
             <article className="group relative aspect-video hover:cursor-pointer  bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl overflow-hidden">
               <Image
+                src="/images/music-data-explorer.png"
+                alt="Music data explorer"
+                fill
+                className="object-cover transition-transform group-hover:scale-105 rounded-xl"
+              />
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300"></div>
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3 className="text-xl font-bold mb-2">Music Data Explorer</h3>
+                <p className="text-gray-300 mb-4">Music Data Explorer is a web application that consumes public music APIs to uncover and visualize interesting and unexpected insights about songs, artists, and albums through interactive charts.</p>
+                <div className="flex gap-4">
+                  <Link href="https://music-data-explorer-h232.vercel.app/" className="text-sm px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+                    View Project
+                  </Link>
+                  <Link href="https://github.com/SimonDiLeoGIT/music-data-explorer" className="text-sm px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+                    GitHub
+                  </Link>
+                </div>
+              </div>
+            </article>
+          </AnimateOnScroll>
+          <AnimateOnScroll translateY={6} translateX={-1} tduration={1200}>
+            <article className="group relative aspect-video hover:cursor-pointer  bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl overflow-hidden">
+              <Image
                 src="/images/ecommerce.png"
                 alt="E-Commerce Platform"
                 fill
